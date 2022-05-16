@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BestTrade - Investors</title>
+    </head>
+    <style>
+        table, th, td {
+          border: 1px solid;
+        }
+        </style>
+    <body>
+        <div>
+            <li><a href="/ui/home">Home</a></li>
+        </div>
+        <div>
+            <h1>Investors</h1>
+                <p>Subtract the total purchase price from the current price of the stock then divide that by the original purchase price and multiply that figure by 100</p>
+                <p>This gives you the total percentage change.</p>
+                <img src="Invest.jpg">
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Address</th>
+                </tr>
+                {% for investor in payload ['investors'] %}
+                    <tr>
+                        <td>{{investor.id}}</td>
+                        <td>{{investor.name}}</td>
+                        <td>{{investor.status}}</td>
+                        <td>{{investor.address}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
